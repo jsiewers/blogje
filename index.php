@@ -15,23 +15,18 @@ if($_SERVER['SERVER_NAME'] == "localhost") {
 	$port = getenv('OPENSHIFT_MYSQL_DB_PORT');
 }
 
-$link = mysqli_init();
-$success = mysqli_real_connect(
-   $link, 
-   $host, 
-   $user, 
-   $password, 
-   $db,
-   $port
-);
-
-if (mysqli_connect_errno()) {
-	printf("Connect failed: %s\n", mysqli_connect_error());
-	exit();
+try {
+	$dbh = new PDO('mysql:host='.$host.';port='.$port.';dbname='.$db, $user, $password);
+	foreach($dbh->query('SELECT * from student') as $row) {
+        print_r($row);
+    }
+    $dbh = null;
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
 }
 
-print_r($_SERVER);
-
+?>
 
 
 ?>
