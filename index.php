@@ -5,6 +5,11 @@ $db = 'school';
 $host = 'localhost';
 $port = 8889;
 
+$host = getenv('OPENSHIFT_MYSQL_DB_HOST');
+$port = getenv('OPENSHIFT_MYSQL_DB_PORT');
+
+print($host);
+
 $link = mysqli_init();
 $success = mysqli_real_connect(
    $link, 
@@ -21,7 +26,5 @@ if($success) {
 	echo "Niet gelukt ahhh jammer<br><br>";
 }
 
-echo getenv(OPENSHIFT_MYSQL_DB_HOST)."<br>";
-echo getenv(OPENSHIFT_MYSQL_DB_PORT)."<br>";
 
 ?>
