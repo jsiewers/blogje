@@ -1,8 +1,7 @@
 <?php 
 
-$lokaal = false;
 
-if($lokaal) {
+if($_SERVER['SERVER_NAME'] == "localhost") {
 	$user = 'root';
 	$password = 'root';
 	$db = 'school';
@@ -30,6 +29,8 @@ if (mysqli_connect_errno()) {
 	printf("Connect failed: %s\n", mysqli_connect_error());
 	exit();
 }
+
+print_r($_SERVER);
 
 
 
