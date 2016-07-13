@@ -1,12 +1,14 @@
 <?php 
 $user = 'root';
 $password = 'root';
-$db = 'school';
+$db = 'blogje';
 $host = 'localhost';
 $port = 8889;
 
 $host = getenv('OPENSHIFT_MYSQL_DB_HOST');
 $port = getenv('OPENSHIFT_MYSQL_DB_PORT');
+$user = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
+$pass = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 
 print($host);
 
