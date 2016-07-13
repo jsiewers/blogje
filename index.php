@@ -25,11 +25,11 @@ $success = mysqli_real_connect(
    $port
 );
 
-if($success) {
-	echo "De verbinding is gelukt";
-} else {
-	echo "Niet gelukt ahhh jammer<br><br>";
+if (mysqli_connect_errno()) {
+	printf("Connect failed: %s\n", mysqli_connect_error());
+	exit();
 }
+
 
 
 ?>
