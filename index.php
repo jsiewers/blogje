@@ -21,7 +21,7 @@ if($success) {
 	echo "Niet gelukt ahhh jammer<br><br>";
 }
 
-echo getenv('OPENSHIFT_MYSQL_DB_HOST')."<br>";
-echo getenv('OPENSHIFT_MYSQL_DB_PORT')."<br>";
+echo getenv(OPENSHIFT_MYSQL_DB_HOST)."<br>";
+echo getenv(OPENSHIFT_MYSQL_DB_PORT)."<br>";
 
 ?>
