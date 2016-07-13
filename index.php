@@ -10,7 +10,10 @@ $port = getenv('OPENSHIFT_MYSQL_DB_PORT');
 $user = getenv('OPENSHIFT_MYSQL_DB_USERNAME');
 $pass = getenv('OPENSHIFT_MYSQL_DB_PASSWORD');
 
-print($host);
+print($host)."<br>";
+print($port)."<br>";
+print($user)."<br>";
+print($pass)."<br>";
 
 $link = mysqli_init();
 $success = mysqli_real_connect(
