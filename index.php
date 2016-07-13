@@ -18,6 +18,10 @@ $success = mysqli_real_connect(
 if($success) {
 	echo "De verbinding is gelukt";
 } else {
-	echo "Niet gelukt ahhh jammer";
+	echo "Niet gelukt ahhh jammer<br><br>";
 }
+
+echo getenv('OPENSHIFT_MYSQL_DB_HOST')."<br>";
+echo getenv('OPENSHIFT_MYSQL_DB_PORT')."<br>";
+
 ?>
