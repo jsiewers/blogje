@@ -2,7 +2,7 @@
 include_once('lib/Db.php');
 
 class Gebruiker {
-	private $idGebruiker;
+	private $idgebruiker;
 	private $voornaam;
 	private $tussenvoegsel;
 	private $achternaam;
@@ -11,6 +11,10 @@ class Gebruiker {
 	
 	function __construct() {
 		
+	}
+	
+	function getIdGebruiker() {
+		return $this->idgebruiker;
 	}
 	
 	function getFullName() {
@@ -69,6 +73,10 @@ class Gebruiker {
 		$sth->setFetchMode(PDO::FETCH_CLASS, 'Gebruiker');
 		$gebruiker = $sth->fetch();
 		if($gebruiker && password_verify($org_password, $gebruiker->getPassword())) {
+			$_SESSION['login'] = array(
+					"fullname" => $gebruiker->getFullName(),
+					"idgebruiker" => $gebruiker->getIdGebruiker()
+			);
 			return $gebruiker;
 		} else {
 			return false;

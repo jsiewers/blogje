@@ -1,20 +1,25 @@
-<?php include("layout/header.php"); ?>
-<?php 
+<?php session_start();
+if(isset($_GET['logout'])) {
+	$_SESSION = array();
+	session_destroy();
+}
 include_once("lib/Gebruiker.php");
+$messages=array();
 if(isset($_POST['login'])) {
 	extract($_POST);
 	$gebruiker = new Gebruiker();
 	if($gebruiker->checkLogin($password, $login)) {
-		echo "Joepie ik ben ingelogd";
+		$messages[] = "Joepie ik ben ingelogd";
 	} else {
-		echo "OOOOooh wat jammer nou";
+		$messages[] = "OOOOooh wat jammer nou";
 	}
 	
+	
+	
 }
-
+include("layout/header.php"); 
 ?>
 
-<div class="container">
 <div class="row">
     <div class="col-sm-offset-2 col-sm-10">
     	<h1>Inloggen</h1>
@@ -39,6 +44,5 @@ if(isset($_POST['login'])) {
     </div>
   </div>
 </form>
-</div><!-- afsluiten container -->
 
 <?php include("layout/footer.php"); ?>

@@ -1,15 +1,19 @@
 <?php
-	include("layout/header.php");
+
+	session_start(); 
+
 	include_once("lib/Advertentie.php");
 	$id = $_GET['id'];
 	$advertentie = new Advertentie();
 	$advertentie = $advertentie->getAdvertentieById($id);
 	$reacties = $advertentie->getReactiesByIdAdvertentie();
 	$gebruiker = $advertentie->getGebruikerById();
+
+	include("layout/header.php");
 ?>
-    <div class="container">
       <div class="page-header">
         <h1>Advertentie</h1>
+        <p><a href="form_reactie.php?id=<?php echo $advertentie->getIdAdvertentie(); ?>">Reactie plaatsen</a></p>
       </div>
 
        <div class="row">
@@ -36,9 +40,6 @@
          	</div>
         </div>
        <?php  } ?>
-
-    </div> <!-- /container -->
-
 
 
 <?php  include("layout/footer.php"); ?>

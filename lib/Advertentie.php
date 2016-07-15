@@ -50,6 +50,19 @@ class Advertentie {
 		return $sth->fetch();	
 	}
 	
+	function insertAdvertentie() {
+		$db = new Db();
+		$conn = $db->getConnectie();
+		$query = "INSERT INTO Advertentie (idgebruiker, titel, advertentietekst, urlfoto) "
+				."VALUES (:idgebruiker, :titel, :advertentietekst, :urlfoto)";
+		$sth = $conn->prepare($query);
+		$sth->bindParam(':idgebruiker', $this->idgebruiker, PDO::PARAM_INT);
+		$sth->bindParam(':titel', $this->titel, PDO::PARAM_STR);
+		$sth->bindParam(':advertentietekst', $this->advertentietekst, PDO::PARAM_STR);
+		$sth->bindParam(':urlfoto', $this->urlfoto, PDO::PARAM_STR);
+		return $sth->execute();
+	}
+	
 	function getTitel() {
 		return $this->titel;
 	}
@@ -61,5 +74,23 @@ class Advertentie {
 	function getUrlFoto() {
 		return $this->urlfoto;
 	}
+	
+	function setIdGebruiker($id) {
+		$this->idgebruiker = $id;
+	}
+	
+	function setTitel($titel) {
+		$this->titel = $titel;
+	}
+	
+	function setAdvertentieTekst($at) {
+		$this->advertentietekst = $at;
+	}
+	
+	function setUrlFoto($urlfoto) {
+		$this->urlfoto = $urlfoto;
+	}
+	
+	
 	
 }

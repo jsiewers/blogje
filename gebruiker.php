@@ -1,5 +1,4 @@
-<?php include("layout/header.php"); ?>
-<?php 
+<?php session_start(); 
 include_once("lib/Gebruiker.php");
 if(isset($_POST['login'])) {
 	extract($_POST);
@@ -17,10 +16,8 @@ if(isset($_POST['login'])) {
 		
 	}
 }
-
+include("layout/header.php");
 ?>
-
-<div class="container">
 <div class="row">
     <div class="col-sm-offset-2 col-sm-10">
     	<h1>Registreren</h1>
@@ -63,6 +60,4 @@ if(isset($_POST['login'])) {
     </div>
   </div>
 </form>
-</div><!-- afsluiten container -->
-
 <?php include("layout/footer.php"); ?>
