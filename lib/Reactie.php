@@ -40,7 +40,7 @@ class Reactie {
 	function insertReactie() {
 		$db = new Db();
 		$conn = $db->getConnectie();
-		$query = "INSERT INTO Reactie (idgebruiker, idadvertentie, reactietekst) "
+		$query = "INSERT INTO reactie (idgebruiker, idadvertentie, reactietekst) "
 				."VALUES (:idgebruiker, :idadvertentie, :reactietekst)";
 				$sth = $conn->prepare($query);
 				$sth->bindParam(':idgebruiker', $this->idgebruiker, PDO::PARAM_INT);
