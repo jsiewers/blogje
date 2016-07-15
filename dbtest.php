@@ -1,5 +1,6 @@
 <?php
 include('lib/Db.php');
+include('lib/Advertentie.php');
 
 $db = new Db();
 $conn = $db->getConnectie();
