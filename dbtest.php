@@ -4,7 +4,7 @@ include('lib/Advertentie.php');
 
 $db = new Db();
 $conn = $db->getConnectie();
-$sth = $conn->prepare("SELECT * FROM Advertentie");
+$sth = $conn->prepare("SELECT * FROM advertentie");
 $sth->execute();
 $advertenties = $sth->fetchAll(PDO::FETCH_CLASS, "Advertentie");
 
