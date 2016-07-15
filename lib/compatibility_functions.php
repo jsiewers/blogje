@@ -14,3 +14,5 @@ function password_verify($password, $hash) {
 function getSalt() {
 	return "!3$rudEDw#$@";
 }
+
+?>

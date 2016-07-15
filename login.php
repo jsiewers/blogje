@@ -1,4 +1,5 @@
 <?php session_start();
+include_once("lib/compatibility.php");
 if(isset($_GET['logout'])) {
 	$_SESSION = array();
 	session_destroy();
