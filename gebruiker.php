@@ -1,4 +1,5 @@
-<?php session_start(); 
+<?php
+include_once("lib/config.php");
 include_once("lib/Gebruiker.php");
 if(isset($_POST['login'])) {
 	extract($_POST);
@@ -8,11 +9,10 @@ if(isset($_POST['login'])) {
 	$gebruiker->setTussenvoegsel($tussenvoegsel);
 	$gebruiker->setLogin($login);
 	$gebruiker->setPassword(password_hash($password, PASSWORD_DEFAULT));
-	
 	if($gebruiker->insertGebruiker()) {
-		echo "Gebruiker is succesvol toegevoegd!";
+		$messages[] = "Gebruiker is succesvol toegevoegd!";
 	} else {
-		echo "Jammmer!";
+		$messages[] = "Gebruiker kon niet worden toegevoegd!";
 		
 	}
 }

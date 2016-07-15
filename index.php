@@ -1,8 +1,9 @@
-<?php session_start();
-	include_once("lib/Blog.php");
-	$blog = new Blog();
-	$blog->selectAdvertenties();
-	include("layout/header.php");
+<?php 
+include_once("lib/config.php");
+include_once("lib/Blog.php");
+$blog = new Blog();
+$blog->selectAdvertenties();
+include("layout/header.php");
 ?>
       <div class="page-header">
         <h1>Advertentieoverzicht</h1>

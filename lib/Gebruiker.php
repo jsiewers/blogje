@@ -72,6 +72,7 @@ class Gebruiker {
 		$sth->execute();
 		$sth->setFetchMode(PDO::FETCH_CLASS, 'Gebruiker');
 		$gebruiker = $sth->fetch();
+		
 		if($gebruiker && password_verify($org_password, $gebruiker->getPassword())) {
 			$_SESSION['login'] = array(
 					"fullname" => $gebruiker->getFullName(),

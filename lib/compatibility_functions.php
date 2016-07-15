@@ -1,4 +1,7 @@
 <?php
+
+define("PASSWORD_DEFAULT", "nothing");
+
 function password_hash($password, $options) {
 	return sha1($password.getSalt());
 }
@@ -12,7 +15,7 @@ function password_verify($password, $hash) {
 }
 
 function getSalt() {
-	return "!3$rudEDw#$@";
+	return "!3rudEDw#$@";
 }
 
 ?>

@@ -1,13 +1,11 @@
 <?php
-
-	session_start(); 
-
-	include_once("lib/Advertentie.php");
-	$id = $_GET['id'];
-	$advertentie = new Advertentie();
-	$advertentie = $advertentie->getAdvertentieById($id);
-	$reacties = $advertentie->getReactiesByIdAdvertentie();
-	$gebruiker = $advertentie->getGebruikerById();
+include_once("lib/config.php");
+include_once("lib/Advertentie.php");
+$id = $_GET['id'];
+$advertentie = new Advertentie();
+$advertentie = $advertentie->getAdvertentieById($id);
+$reacties = $advertentie->getReactiesByIdAdvertentie();
+$gebruiker = $advertentie->getGebruikerById();
 
 	include("layout/header.php");
 ?>

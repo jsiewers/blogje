@@ -1,4 +1,5 @@
 <?php
+include_once("lib/config.php");
 include('lib/Db.php');
 include('lib/Advertentie.php');
 

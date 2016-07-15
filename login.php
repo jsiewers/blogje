@@ -1,5 +1,5 @@
-<?php session_start();
-include_once("lib/compatibility.php");
+<?php 
+include_once("lib/config.php");
 if(isset($_GET['logout'])) {
 	$_SESSION = array();
 	session_destroy();
