@@ -76,7 +76,8 @@ class Gebruiker {
 		if($gebruiker && password_verify($org_password, $gebruiker->getPassword())) {
 			$_SESSION['login'] = array(
 					"fullname" => $gebruiker->getFullName(),
-					"idgebruiker" => $gebruiker->getIdGebruiker()
+					"idgebruiker" => $gebruiker->getIdGebruiker(),
+					"login" => $gebruiker->getLogin()
 			);
 			return $gebruiker;
 		} else {

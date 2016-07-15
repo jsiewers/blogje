@@ -17,7 +17,7 @@ $gebruiker = $advertentie->getGebruikerById();
        <div class="row">
        
         		<div class="col-md-4">
-        			<img class="img-responsive" src="<?php echo $advertentie->getUrlFoto(); ?>">
+        			<img class="img-rounded" src="<?php echo $advertentie->getUrlFoto(); ?>">
         		</div>
         		<div class="col-md-8">
         			<p><i><?php echo $gebruiker->getFullName(); ?></i><p>

@@ -1,5 +1,14 @@
 @CHARSET "UTF-8";
 
-div.advertentie {
+li.message {
+	color:#d00001;
+	font-weight:bold;
+}
+
+ul {
+	list-style-type:none;
+}
+
+.advertentie {
 	margin-bottom:20px;
 }

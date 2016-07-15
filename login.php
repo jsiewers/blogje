@@ -1,9 +1,5 @@
-<?php 
+<?php
 include_once("lib/config.php");
-if(isset($_GET['logout'])) {
-	$_SESSION = array();
-	session_destroy();
-}
 include_once("lib/Gebruiker.php");
 $messages=array();
 if(isset($_POST['login'])) {
@@ -12,11 +8,8 @@ if(isset($_POST['login'])) {
 	if($gebruiker->checkLogin($password, $login)) {
 		$messages[] = "Joepie ik ben ingelogd";
 	} else {
-		$messages[] = "OOOOooh wat jammer nou";
+		$messages[] = "Er is iets misgegaan met inloggen";
 	}
-	
-	
-	
 }
 include("layout/header.php"); 
 ?>
