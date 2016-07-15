@@ -19,9 +19,11 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="index.php">Home</a></li>
+              <li class="active"><a href="index.php">Ads</a></li>
+  			  <?php if(isset($_SESSION['login'])) { ?>
               <li><a href="form_advertentie.php">Advertentie toevoegen</a></li>
-              <li><a href="gebruiker.php">Gebruiker toevoegen</a></li>
+               <?php } ?>
+              <li><a href="gebruiker.php">Registreren</a></li>
               <?php if(isset($_SESSION['login'])) { ?>
               <li><a href="loguit.php">Uitloggen</a></li>
                <li><img style="width:42px;height:42px;" src="img/<?php echo $_SESSION['login']['login']; ?>.png" alt="plaatje gebruiker"></li>
