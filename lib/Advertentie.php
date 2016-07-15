@@ -53,7 +53,7 @@ class Advertentie {
 	function insertAdvertentie() {
 		$db = new Db();
 		$conn = $db->getConnectie();
-		$query = "INSERT INTO Advertentie (idgebruiker, titel, advertentietekst, urlfoto) "
+		$query = "INSERT INTO advertentie (idgebruiker, titel, advertentietekst, urlfoto) "
 				."VALUES (:idgebruiker, :titel, :advertentietekst, :urlfoto)";
 		$sth = $conn->prepare($query);
 		$sth->bindParam(':idgebruiker', $this->idgebruiker, PDO::PARAM_INT);
