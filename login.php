@@ -12,6 +12,8 @@ if(isset($_POST['login'])) {
 	}
 }
 include("layout/header.php"); 
+
+//Even testen
 ?>
 
 <div class="row">
